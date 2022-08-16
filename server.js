@@ -1,5 +1,3 @@
-// import express from 'express';
-// import expressGraphQL from 'express-graphql';
 const express = require('express');
 const expressGraphQL = require('express-graphql').graphqlHTTP;
 
