@@ -32,6 +32,19 @@ const UserType = new GraphQLObjectType({
   }
 });
 
+//Graphql query:
+// {
+//   user(id: "23") {
+//     id,
+//     firstName,
+//     age,
+//     company {
+//       id,
+//       name,
+//       description
+//     }
+//   }
+// }
 
 
 const RootQuery = new GraphQLObjectType({
