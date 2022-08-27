@@ -15,6 +15,9 @@ then
 you'll see the GraphiQL tool at:
 http://localhost:4000/graphql
 
-Root Query:
+Root Queries:
 You could get a particular user's id, first name, age and company with the following query:
 `{ user(id: "insert_id_here") { id, firstName, age, company { id, name, description } } }`
+
+Same with the company:
+`{ company(id: "insert_id_here") { id, name, description } }`
