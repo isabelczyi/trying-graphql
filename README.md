@@ -1,4 +1,4 @@
-a GraphQL study using json-server as the db.
+a GraphQL study using json-server.
 
 first start up the db by running:
 
