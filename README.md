@@ -90,9 +90,23 @@ fragment companyDetails on Company {
 }`
 
 
-mutation query example:
+mutation query examples:
 ` mutation {
   addUser(firstName:"Stephen", age: 26){
+    id
+    firstName
+    age
+  }
+}`
+
+` mutation {
+  deleteUser(id: "23"){
+    id
+  }
+}`
+
+` mutation {
+  editUser(id: "40", firstName: "Alexaaa", companyId: "1"){
     id
     firstName
     age
