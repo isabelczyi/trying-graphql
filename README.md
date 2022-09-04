@@ -1,4 +1,8 @@
+## Description
+
 a GraphQL study using json-server as the db.
+
+## Installation
 
 first start up the db by running:
 
@@ -15,35 +19,39 @@ then
 you'll see the GraphiQL tool at:
 http://localhost:4000/graphql
 
+## Extra notes for my future self
+
 Root Queries:
 You could get a particular user's id, first name, age and company with the following query:
-`{ user(id: "insert_id_here") { id, firstName, age, company { id, name, description } } }`
+```{ user(id: "insert_id_here") { id, firstName, age, company { id, name, description } } }```
 
 Same with the company:
-`{ company(id: "1") { id, name, description, users { id firstName age } } }`
+```{ company(id: "1") { id, name, description, users { id firstName age } } }```
 
 
 Tips:
 you could write the query above with the word query:
-`query {
+```query {
   company(id: "insert_id_here"){
     id
     name
     description
   }
-}`
+}
+```
 
 you could also name the query:
-`query fetchCompany{
+```query fetchCompany{
   company(id: "insert_id_here"){
     id
     name
     description
   }
-}`
+}
+```
 
 you could also ask for several companies in a single query but you'll have to give it a key so you don't get an error of duplicate keys:
-`{
+```{
   apple: company(id: "1"){
     id
     name
@@ -54,10 +62,11 @@ you could also ask for several companies in a single query but you'll have to gi
     name
     description
   }
-}`
+}
+```
 
 the response would be:
-`{
+```{
   "data": {
     "apple": {
       "id": "1",
@@ -70,11 +79,12 @@ the response would be:
       "description": "search"
     }
   }
-}`
+}
+```
 
 
 You could also make the same query above using query fragments:
-`{
+```{
   apple: company(id: "1"){
     ...companyDetails
   }
@@ -87,28 +97,32 @@ fragment companyDetails on Company {
   id
   name
   description
-}`
+}
+```
 
 
 mutation query examples:
-` mutation {
+```mutation {
   addUser(firstName:"Stephen", age: 26){
     id
     firstName
     age
   }
-}`
+}
+```
 
-` mutation {
+```mutation {
   deleteUser(id: "23"){
     id
   }
-}`
+}
+```
 
-` mutation {
+```mutation {
   editUser(id: "40", firstName: "Alexaaa", companyId: "1"){
     id
     firstName
     age
   }
-}`
+}
+```
